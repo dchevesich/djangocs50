@@ -4,4 +4,9 @@ from django.http import HttpResponse
 
 
 def hello(request):
-    return HttpResponse("hola mundo")
+
+    lista_generica = ["hola", "hello", "bye"]
+
+    return render(request, 'base.html', {
+        'lista': lista_generica
+    })

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+    <title>Hello base</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Tasks</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            {% for elemento in lista %}
+            <p>{{ elemento }}</p>
+            {% endfor %}
+
+            <form action="{% url 'task' %}">
+                <button>Go to Tasks</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+
+</html>
