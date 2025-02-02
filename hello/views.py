@@ -1,12 +1,21 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import redirect
 # Create your views here.
+
+lista_generica = ["hola", "hello", "bye"]
 
 
 def hello(request):
 
-    lista_generica = ["hola", "hello", "bye"]
-
     return render(request, 'base.html', {
         'lista': lista_generica
     })
+
+
+def add(request):
+    if request.method == "POST":
+        tarea = request.POST.get('task')
+        lista_generica.append(tarea)
+        return redirect('hello')
+    else:
+        return render(request, 'add.html')

@@ -7,3 +7,11 @@ nav ul {
     list-style: none;
     padding: 0;
 }
+
+nav li {
+    margin: 5px;
+}
+
+body {
+    background-color: beige;
+}
