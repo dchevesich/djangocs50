@@ -11,10 +11,12 @@
 
 <body>
     <header>
+        <img src="{% static 'images/lukakin.jpg' %}" alt="unperroloco" width="350px" height="350px">
+        <img src="{% static 'images/pixintuna.jpg' %}" alt="ungataloca" width="200px" height="200px">
         <nav>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Tasks</a></li>
+                <li><a href="{% url 'hello' %}">Hello</a></li>
+                <li><a href="{% url 'task' %}">Tasks</a></li>
                 <li><a href="">About</a></li>
             </ul>
         </nav>
@@ -22,13 +24,9 @@
 
     <main>
         <section>
-            {% for elemento in lista %}
-            <p>{{ elemento }}</p>
-            {% endfor %}
+            {% block content %}
 
-            <form action="{% url 'task' %}">
-                <button>Go to Tasks</button>
-            </form>
+            {% endblock %}
         </section>
     </main>
 
